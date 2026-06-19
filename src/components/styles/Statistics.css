@@ -1,0 +1,137 @@
+/* ===== Statistics / Achievement Section ===== */
+.statistics-section {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: 120px auto;
+  padding: 80px 0;
+  position: relative;
+}
+
+.statistics-section h2 {
+  font-size: 60px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 80px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.statistics-section h2 > span {
+  color: var(--accentColor);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.stat-card {
+  position: relative;
+  padding: 50px 30px;
+  text-align: center;
+  border: 1px solid rgba(194, 164, 255, 0.15);
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(194, 164, 255, 0.05) 0%,
+    rgba(11, 8, 12, 0.8) 100%
+  );
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accentColor),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+.stat-card:hover {
+  border-color: rgba(194, 164, 255, 0.35);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(194, 164, 255, 0.1);
+}
+
+.stat-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+  display: block;
+  opacity: 0.7;
+}
+
+.stat-number {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #fff 30%, var(--accentColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-suffix {
+  font-size: 36px;
+}
+
+.stat-label {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
+/* ===== Responsive ===== */
+@media only screen and (max-width: 1400px) {
+  .statistics-section h2 {
+    font-size: 50px;
+  }
+  .stat-number {
+    font-size: 52px;
+  }
+  .stat-card {
+    padding: 40px 25px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .statistics-section {
+    margin: 80px auto;
+    padding: 50px 0;
+  }
+  .statistics-section h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+  .stat-number {
+    font-size: 44px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-card {
+    padding: 35px 20px;
+  }
+}

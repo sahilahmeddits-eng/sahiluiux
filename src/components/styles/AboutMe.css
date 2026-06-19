@@ -1,0 +1,1293 @@
+/* ===================================================================
+   ABOUT ME PAGE — Premium Dark Futuristic Theme
+   =================================================================== */
+
+/* ===== Page Container ===== */
+.aboutme-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--backgroundColor);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===================================================================
+   SECTION 1: HERO / BANNER
+   =================================================================== */
+.aboutme-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.aboutme-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.aboutme-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.aboutme-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 2, 15, 0.88) 0%,
+    rgba(10, 5, 30, 0.75) 40%,
+    rgba(5, 2, 15, 0.6) 100%
+  );
+  z-index: 2;
+}
+
+.aboutme-hero-overlay::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, var(--backgroundColor));
+  z-index: 3;
+}
+
+.aboutme-hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.aboutme-hero-glow-1 {
+  top: -100px;
+  left: -100px;
+  background: #3b82f6;
+}
+
+.aboutme-hero-glow-2 {
+  bottom: -150px;
+  right: -100px;
+  background: #6366f1;
+}
+
+.aboutme-hero-content {
+  position: relative;
+  z-index: 4;
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: 0 auto;
+  padding: 160px 0 120px;
+}
+
+.aboutme-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: #60a5fa;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.aboutme-hero-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 10px #3b82f6;
+  animation: aboutmePulse 2s ease-in-out infinite;
+}
+
+.aboutme-hero h1 {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0 0 24px;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aboutme-hero-subtitle {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(234, 229, 236, 0.85);
+  max-width: 620px;
+  margin: 0 0 20px;
+  letter-spacing: 0.3px;
+}
+
+.aboutme-hero-desc {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(234, 229, 236, 0.55);
+  max-width: 560px;
+  margin: 0 0 40px;
+}
+
+.aboutme-hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.aboutme-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Geist", sans-serif;
+  letter-spacing: 0.5px;
+  color: #0a0a1a;
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutme-btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.aboutme-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.35);
+  color: #0a0a1a;
+}
+
+.aboutme-btn-primary:hover::before {
+  left: 100%;
+}
+
+.aboutme-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Geist", sans-serif;
+  letter-spacing: 0.5px;
+  color: #e2e8f0;
+  background: transparent;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  text-decoration: none;
+}
+
+.aboutme-btn-secondary:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+}
+
+/* ===================================================================
+   SECTION 2: ABOUT ME (NEW REFERENCE LAYOUT)
+   =================================================================== */
+.aboutme-ref-section {
+  width: 100%;
+  padding: 100px 0 160px; /* Increased bottom padding for proper gap to next section */
+  position: relative;
+  background-image: url("/images/new-about-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.aboutme-ref-container {
+  width: var(--cWidth);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: flex-end; /* Align bottom to let the portrait sit naturally */
+}
+
+/* LEFT COLUMN */
+.aboutme-ref-left {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.aboutme-ref-greeting {
+  font-size: 14px;
+  color: #94a3b8;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  font-family: "Geist", sans-serif;
+}
+
+.aboutme-ref-name {
+  font-size: 42px;
+  font-weight: 800;
+  color: #e2e8f0;
+  margin: 0 0 40px;
+  letter-spacing: -1px;
+}
+
+.aboutme-ref-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.aboutme-ref-image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.25) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.aboutme-ref-portrait {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 2;
+  filter: contrast(1.05) drop-shadow(0 10px 30px rgba(0,0,0,0.6));
+}
+
+/* Simple fire particles */
+.aboutme-ref-particle {
+  position: absolute;
+  width: 4px;
+  height: 16px;
+  background: #fb923c;
+  border-radius: 10px;
+  filter: blur(2px);
+  z-index: 3;
+  opacity: 0;
+  animation: floatUp 3s infinite ease-in;
+}
+
+.aboutme-ref-particle.p-1 { left: 10%; bottom: 20%; animation-delay: 0s; }
+.aboutme-ref-particle.p-2 { left: 30%; bottom: 10%; animation-delay: 0.7s; height: 10px; }
+.aboutme-ref-particle.p-3 { left: 80%; bottom: 30%; animation-delay: 1.5s; }
+.aboutme-ref-particle.p-4 { left: 70%; bottom: 5%; animation-delay: 2.2s; height: 20px; }
+.aboutme-ref-particle.p-5 { left: 20%; bottom: 40%; animation-delay: 0.4s; height: 8px; }
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+}
+
+/* RIGHT COLUMN */
+.aboutme-ref-right {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.aboutme-ref-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutme-ref-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f1f5f9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 16px;
+}
+
+.aboutme-ref-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+}
+
+.aboutme-ref-skills-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.aboutme-ref-skill-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.aboutme-ref-skill-icon:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+}
+
+.aboutme-ref-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.aboutme-ref-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aboutme-ref-list li {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ref-list-dot {
+  position: absolute;
+  left: -16px;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+}
+
+.aboutme-ref-list strong {
+  font-size: 15px;
+  color: #e2e8f0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.aboutme-ref-list span {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* =================================================================== */
+   SECTION 3: EDUCATION
+   =================================================================== */
+.aboutme-education {
+  width: var(--cWidth);
+  max-width: 1100px;
+  margin: 140px auto;
+  position: relative;
+}
+
+.aboutme-section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.aboutme-section-header h2 {
+  font-size: 52px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+.aboutme-section-header h2 span {
+  background: linear-gradient(135deg, #3b82f6, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aboutme-section-header p {
+  font-size: 16px;
+  color: rgba(234, 229, 236, 0.5);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.aboutme-edu-timeline {
+  position: relative;
+  padding-left: 60px;
+}
+
+.aboutme-edu-timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    #3b82f6 0%,
+    rgba(59, 130, 246, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.aboutme-edu-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 32px 36px;
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(59, 130, 246, 0.05) 0%,
+    rgba(15, 10, 30, 0.8) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: all 0.4s ease;
+}
+
+.aboutme-edu-item:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateX(8px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.08);
+}
+
+.aboutme-edu-item::before {
+  content: "";
+  position: absolute;
+  left: -48px;
+  top: 38px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 3px solid var(--backgroundColor);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.aboutme-edu-item::after {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 44px;
+  width: 26px;
+  height: 2px;
+  background: rgba(59, 130, 246, 0.3);
+}
+
+.aboutme-edu-year {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.aboutme-edu-item h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #f1f5f9;
+}
+
+.aboutme-edu-institution {
+  font-size: 15px;
+  color: #60a5fa;
+  font-weight: 400;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aboutme-edu-item p {
+  font-size: 14px;
+  color: rgba(234, 229, 236, 0.55);
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* ===================================================================
+   SECTION 4: WORK EXPERIENCE
+   =================================================================== */
+.aboutme-experience {
+  width: var(--cWidth);
+  max-width: 1200px;
+  margin: 140px auto;
+  position: relative;
+}
+
+.aboutme-exp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.aboutme-exp-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(59, 130, 246, 0.04) 0%,
+    rgba(15, 10, 30, 0.85) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.08);
+  transition: all 0.45s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutme-exp-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #3b82f6, transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.aboutme-exp-card:hover {
+  border-color: rgba(59, 130, 246, 0.25);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.08);
+}
+
+.aboutme-exp-card:hover::before {
+  opacity: 1;
+}
+
+.aboutme-exp-period {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.aboutme-exp-year {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 30%, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.aboutme-exp-duration {
+  font-size: 12px;
+  color: rgba(234, 229, 236, 0.4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.aboutme-exp-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #4ade80;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  width: fit-content;
+}
+
+.aboutme-exp-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: aboutmePulse 2s ease-in-out infinite;
+}
+
+.aboutme-exp-details h3 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: #f1f5f9;
+}
+
+.aboutme-exp-company {
+  font-size: 16px;
+  color: #60a5fa;
+  font-weight: 400;
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aboutme-exp-location {
+  font-size: 13px;
+  color: rgba(234, 229, 236, 0.4);
+  margin: 0 0 16px;
+}
+
+.aboutme-exp-details p {
+  font-size: 15px;
+  color: rgba(234, 229, 236, 0.6);
+  line-height: 1.75;
+  margin: 0 0 18px;
+  font-weight: 300;
+}
+
+.aboutme-exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.aboutme-exp-tag {
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  font-size: 12px;
+  color: #93c5fd;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.aboutme-exp-tag:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+/* ===================================================================
+   SECTION 5: TOOLS & TECHNOLOGIES
+   =================================================================== */
+.aboutme-tools {
+  width: 100%;
+  margin: 140px auto;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutme-tools::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.3),
+    transparent
+  );
+}
+
+.aboutme-tools::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.3),
+    transparent
+  );
+}
+
+.aboutme-tools .aboutme-section-header {
+  width: var(--cWidth);
+  max-width: 1300px;
+  margin: 0 auto 50px;
+}
+
+.aboutme-tools-row {
+  margin-bottom: 20px;
+}
+
+.aboutme-tool-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  margin: 0 10px;
+  border-radius: 50px;
+  background: rgba(59, 130, 246, 0.04);
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  transition: all 0.35s ease;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.aboutme-tool-pill:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.12);
+  transform: translateY(-2px);
+}
+
+.aboutme-tool-pill-icon {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutme-tool-pill span:last-child {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e8f0;
+  letter-spacing: 0.5px;
+}
+
+/* ===================================================================
+   SECTION 6: FREELANCE / WHAT I OFFER
+   =================================================================== */
+.aboutme-freelance {
+  width: var(--cWidth);
+  max-width: 1300px;
+  margin: 140px auto;
+  position: relative;
+}
+
+.aboutme-freelance-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.aboutme-freelance-intro p {
+  font-size: 16px;
+  color: rgba(234, 229, 236, 0.55);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.aboutme-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.aboutme-service-card {
+  padding: 36px 30px;
+  border-radius: 20px;
+  background: linear-gradient(
+    155deg,
+    rgba(59, 130, 246, 0.05) 0%,
+    rgba(10, 5, 20, 0.9) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutme-service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.aboutme-service-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.1);
+}
+
+.aboutme-service-card:hover::before {
+  opacity: 0.7;
+}
+
+.aboutme-service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.15),
+    rgba(99, 102, 241, 0.1)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+
+.aboutme-service-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #f1f5f9;
+}
+
+.aboutme-service-card p {
+  font-size: 14px;
+  color: rgba(234, 229, 236, 0.5);
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* ===================================================================
+   SECTION 7: STATISTICS / ACHIEVEMENTS
+   =================================================================== */
+.aboutme-stats {
+  width: var(--cWidth);
+  max-width: 1300px;
+  margin: 140px auto;
+  position: relative;
+}
+
+.aboutme-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.aboutme-stats-visual {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: linear-gradient(
+    145deg,
+    rgba(59, 130, 246, 0.08) 0%,
+    rgba(15, 10, 30, 0.9) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutme-stats-visual-inner {
+  text-align: center;
+  padding: 40px;
+}
+
+.aboutme-stats-visual-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.3));
+}
+
+.aboutme-stats-visual h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  background: linear-gradient(135deg, #fff, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aboutme-stats-visual p {
+  font-size: 14px;
+  color: rgba(234, 229, 236, 0.5);
+  margin: 0;
+}
+
+/* Glow decoration */
+.aboutme-stats-visual::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #3b82f6;
+  filter: blur(80px);
+  opacity: 0.08;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.aboutme-stats-numbers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.aboutme-stat-item {
+  padding: 32px 28px;
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(59, 130, 246, 0.05) 0%,
+    rgba(15, 10, 30, 0.85) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: all 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutme-stat-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  opacity: 0.4;
+}
+
+.aboutme-stat-item:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.1);
+}
+
+.aboutme-stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, #fff 30%, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+.aboutme-stat-suffix {
+  font-size: 28px;
+}
+
+.aboutme-stat-label {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(234, 229, 236, 0.5);
+  display: block;
+  margin-top: 4px;
+}
+
+.aboutme-stat-emoji {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ===================================================================
+   SECTION DIVIDERS
+   =================================================================== */
+.aboutme-divider {
+  width: var(--cWidth);
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+}
+
+/* ===================================================================
+   ANIMATIONS
+   =================================================================== */
+@keyframes aboutmePulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px currentColor;
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 5px currentColor;
+  }
+}
+
+@keyframes aboutmeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.aboutme-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.aboutme-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================================================
+   RESPONSIVE — TABLETS (max 1400px)
+   =================================================================== */
+@media only screen and (max-width: 1400px) {
+  .aboutme-hero h1 {
+    font-size: 58px;
+  }
+  .aboutme-hero-subtitle {
+    font-size: 19px;
+  }
+  .aboutme-section-header h2 {
+    font-size: 44px;
+  }
+  .aboutme-intro-grid {
+    gap: 50px;
+  }
+  .aboutme-intro-text h2 {
+    font-size: 40px;
+  }
+  .aboutme-exp-card {
+    grid-template-columns: 160px 1fr;
+    gap: 30px;
+    padding: 32px;
+  }
+  .aboutme-exp-year {
+    font-size: 30px;
+  }
+  .aboutme-exp-details h3 {
+    font-size: 22px;
+  }
+  .aboutme-stat-number {
+    font-size: 40px;
+  }
+}
+
+/* ===================================================================
+   RESPONSIVE — SMALL TABLETS (max 1024px)
+   =================================================================== */
+@media only screen and (max-width: 1024px) {
+  .aboutme-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .bento-profile {
+    align-items: center;
+    text-align: center;
+  }
+  .bento-profile-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .aboutme-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .aboutme-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===================================================================
+   RESPONSIVE — MOBILE (max 768px)
+   =================================================================== */
+@media only screen and (max-width: 768px) {
+  .aboutme-hero {
+    min-height: 85vh;
+  }
+  .aboutme-hero-content {
+    padding: 140px 0 80px;
+  }
+  .aboutme-hero h1 {
+    font-size: 40px;
+  }
+  .aboutme-hero-subtitle {
+    font-size: 17px;
+  }
+  .aboutme-hero-desc {
+    font-size: 14px;
+  }
+  .aboutme-hero-ctas {
+    flex-direction: column;
+  }
+  .aboutme-btn-primary,
+  .aboutme-btn-secondary {
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+  }
+  .aboutme-section-header h2 {
+    font-size: 36px;
+  }
+  .aboutme-intro-text h2 {
+    font-size: 32px;
+  }
+  .aboutme-intro-highlights {
+    grid-template-columns: 1fr;
+  }
+  .aboutme-intro,
+  .aboutme-education,
+  .aboutme-experience,
+  .aboutme-freelance,
+  .aboutme-stats {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .aboutme-services-grid {
+    grid-template-columns: 1fr;
+  }
+  .aboutme-exp-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px;
+  }
+  .aboutme-exp-period {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+  .aboutme-stats-numbers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .aboutme-edu-timeline {
+    padding-left: 40px;
+  }
+  .aboutme-edu-item::before {
+    left: -28px;
+  }
+  .aboutme-edu-item::after {
+    left: -14px;
+    width: 8px;
+  }
+  .aboutme-edu-timeline::before {
+    left: 10px;
+  }
+  .aboutme-edu-item {
+    padding: 24px;
+  }
+  .aboutme-edu-item h3 {
+    font-size: 18px;
+  }
+}
+
+/* ===================================================================
+   RESPONSIVE — SMALL MOBILE (max 480px)
+   =================================================================== */
+@media only screen and (max-width: 480px) {
+  .aboutme-hero h1 {
+    font-size: 32px;
+  }
+  .aboutme-hero-subtitle {
+    font-size: 15px;
+  }
+  .aboutme-section-header h2 {
+    font-size: 28px;
+  }
+  .aboutme-intro-text h2 {
+    font-size: 26px;
+  }
+  .aboutme-stats-numbers {
+    grid-template-columns: 1fr;
+  }
+  .aboutme-stat-number {
+    font-size: 36px;
+  }
+  .aboutme-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .bento-item {
+    padding: 24px;
+  }
+  .bento-skills {
+    grid-template-columns: 1fr;
+  }
+  .bento-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,142 @@
+/* ===== ERP Software Section ===== */
+.erp-section {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: 120px auto;
+  padding: 80px 0;
+  position: relative;
+}
+
+.erp-section h2 {
+  font-size: 60px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.erp-section h2 > span {
+  color: var(--accentColor);
+}
+
+.erp-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 70px;
+  letter-spacing: 1px;
+}
+
+.erp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.erp-card {
+  position: relative;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.erp-card:hover {
+  border-color: rgba(194, 164, 255, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(194, 164, 255, 0.08);
+}
+
+.erp-card-image {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(
+    135deg,
+    rgba(194, 164, 255, 0.08) 0%,
+    rgba(30, 20, 40, 0.9) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.erp-card-image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, rgba(11, 8, 12, 0.95));
+}
+
+.erp-card-info {
+  padding: 24px 28px;
+}
+
+.erp-card-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.erp-card-info p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.erp-card-tag {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 4px 14px;
+  font-size: 12px;
+  border: 1px solid rgba(194, 164, 255, 0.3);
+  border-radius: 50px;
+  color: var(--accentColor);
+  letter-spacing: 0.5px;
+}
+
+/* ===== Responsive ===== */
+@media only screen and (max-width: 1400px) {
+  .erp-section h2 {
+    font-size: 50px;
+  }
+  .erp-card-image {
+    height: 180px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .erp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .erp-section {
+    margin: 80px auto;
+    padding: 50px 0;
+  }
+  .erp-section h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  .erp-subtitle {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .erp-grid {
+    grid-template-columns: 1fr;
+  }
+  .erp-card-image {
+    height: 160px;
+  }
+}

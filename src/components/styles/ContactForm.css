@@ -1,0 +1,217 @@
+/* ===== Contact Form Section ===== */
+.contactform-section {
+  width: var(--cWidth);
+  max-width: 1100px;
+  margin: 120px auto;
+  padding: 80px 0;
+  position: relative;
+}
+
+.contactform-section h2 {
+  font-size: 60px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.contactform-section h2 > span {
+  color: var(--accentColor);
+}
+
+.contactform-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+/* ===== CTA Buttons ===== */
+.contactform-ctas {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.contactform-cta-btn {
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Geist", sans-serif;
+  letter-spacing: 1px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  background: transparent;
+  color: #eae5ec;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactform-cta-btn:hover {
+  border-color: rgba(194, 164, 255, 0.4);
+  color: #fff;
+}
+
+.contactform-cta-btn.active {
+  background: linear-gradient(135deg, #FF9D00, #e68d00);
+  border-color: #FF9D00;
+  color: #111;
+  box-shadow: 0 8px 30px rgba(255, 157, 0, 0.25);
+}
+
+.contactform-cta-btn.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255, 157, 0, 0.35);
+}
+
+/* ===== Form Panel ===== */
+.contactform-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+.contactform-panel.active {
+  max-height: 800px;
+  opacity: 1;
+}
+
+.contactform-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.contactform-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactform-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.contactform-field label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.contactform-field input,
+.contactform-field select,
+.contactform-field textarea {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-family: "Geist", sans-serif;
+  color: #eae5ec;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactform-field input:focus,
+.contactform-field select:focus,
+.contactform-field textarea:focus {
+  border-color: var(--accentColor);
+  box-shadow: 0 0 20px rgba(194, 164, 255, 0.1);
+}
+
+.contactform-field input::placeholder,
+.contactform-field textarea::placeholder {
+  color: #555;
+}
+
+.contactform-field select option {
+  background: #1a1520;
+  color: #eae5ec;
+}
+
+.contactform-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contactform-submit {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.contactform-submit button {
+  padding: 16px 50px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Geist", sans-serif;
+  background: linear-gradient(135deg, #FF9D00, #e68d00);
+  color: #111;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.contactform-submit button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(255, 157, 0, 0.3);
+}
+
+/* ===== Responsive ===== */
+@media only screen and (max-width: 1400px) {
+  .contactform-section h2 {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .contactform-section {
+    margin: 80px auto;
+    padding: 50px 0;
+  }
+  .contactform-section h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  .contactform-ctas {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .contactform-cta-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+  .contactform-form {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+  .contactform-field.full-width {
+    grid-column: 1;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .contactform-form {
+    padding: 18px;
+  }
+  .contactform-cta-btn {
+    padding: 14px 30px;
+    font-size: 14px;
+  }
+}
