@@ -175,6 +175,7 @@ const TechStack = () => {
         gl={{ alpha: true, stencil: false, depth: false, antialias: false }}
         camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
         onCreated={(state) => (state.gl.toneMappingExposure = 1.5)}
+        onError={(error) => console.warn("TechStack Canvas error:", error)}
         className="tech-canvas"
       >
         <ambientLight intensity={1} />

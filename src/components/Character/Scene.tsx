@@ -27,10 +27,31 @@ const Scene = () => {
       const aspect = container.width / container.height;
       const scene = sceneRef.current;
 
-      const renderer = new THREE.WebGLRenderer({
-        alpha: true,
-        antialias: true,
-      });
+      // Try to create WebGL renderer — if it fails, skip 3D but don't crash
+      let renderer: THREE.WebGLRenderer;
+      try {
+        renderer = new THREE.WebGLRenderer({
+          alpha: true,
+          antialias: true,
+        });
+      } catch (e) {
+        console.warn("WebGL not available, skipping 3D scene:", e);
+        // Still complete the loading flow so the page doesn't hang
+        const progress = setProgress((value) => setLoading(value));
+        progress.loaded();
+        return;
+      }
+
+      // Check if the context was actually created
+      const gl = renderer.getContext();
+      if (!gl || gl.isContextLost()) {
+        console.warn("WebGL context lost or unavailable, skipping 3D scene.");
+        renderer.dispose();
+        const progress = setProgress((value) => setLoading(value));
+        progress.loaded();
+        return;
+      }
+
       renderer.setSize(container.width, container.height);
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -111,8 +132,9 @@ const Scene = () => {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
+      let animationFrameId: number;
       const animate = () => {
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
         if (headBone) {
           handleHeadRotation(
             headBone,
@@ -132,6 +154,7 @@ const Scene = () => {
       };
       animate();
       return () => {
+        cancelAnimationFrame(animationFrameId);
         clearTimeout(debounce);
         if (progress) progress.clear();
         scene.clear();

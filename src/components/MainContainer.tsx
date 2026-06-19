@@ -13,6 +13,7 @@ import ERPSoftware from "./ERPSoftware";
 import CustomerReviews from "./CustomerReviews";
 import ContactForm from "./ContactForm";
 import setSplitText from "./utils/splitText";
+import ErrorBoundary from "./ErrorBoundary";
 
 const TechStack = lazy(() => import("./TechStack"));
 
@@ -50,9 +51,11 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <Statistics />
             <ERPSoftware />
             {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
-                <TechStack />
-              </Suspense>
+              <ErrorBoundary>
+                <Suspense fallback={<div>Loading....</div>}>
+                  <TechStack />
+                </Suspense>
+              </ErrorBoundary>
             )}
             <CustomerReviews />
             <ContactForm />
