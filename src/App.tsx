@@ -7,6 +7,7 @@ const MainContainer = lazy(() => import("./components/MainContainer"));
 const AboutMePage = lazy(() => import("./pages/AboutMePage"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
+const ContactMePage = lazy(() => import("./pages/ContactMePage"));
 import { LoadingProvider } from "./context/LoadingProvider";
 
 const App = () => {
@@ -47,6 +48,14 @@ const App = () => {
         element={
           <Suspense fallback={<div style={{ background: "#0b080c", height: "100vh" }}></div>}>
             <ProjectsPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/contact"
+        element={
+          <Suspense fallback={<div style={{ background: "#0b080c", height: "100vh" }}></div>}>
+            <ContactMePage />
           </Suspense>
         }
       />
