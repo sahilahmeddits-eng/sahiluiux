@@ -128,6 +128,7 @@ const Scene = () => {
       animate();
       return () => {
         clearTimeout(debounce);
+        if (progress) progress.clear();
         scene.clear();
         renderer.dispose();
         window.removeEventListener("resize", () =>
