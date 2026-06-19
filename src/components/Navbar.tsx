@@ -89,7 +89,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a data-href="#contact" href="#contact" className="cta-btn">
+            <a href="/contact" onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = "/contact"; }} className="cta-btn">
               Contact Me
             </a>
           </li>

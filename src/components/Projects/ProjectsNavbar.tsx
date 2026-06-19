@@ -53,7 +53,7 @@ const ProjectsNavbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/#contact" className="cta-btn">
+            <Link to="/contact" className="cta-btn">
               Contact Me
             </Link>
           </li>
