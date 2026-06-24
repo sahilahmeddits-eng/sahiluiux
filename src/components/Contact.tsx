@@ -17,7 +17,7 @@ const Contact = () => {
             <h4>Phone</h4>
             <p>
               <a href="tel:+917797982344" data-cursor="disable">
-                +91 77979 82344
+                7797982344
               </a>
             </p>
             <h4>Location</h4>
@@ -34,32 +34,27 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://github.com"
+              href="https://github.com/sahilahmeddits-eng"
               target="_blank"
+              rel="noopener noreferrer"
               data-cursor="disable"
               className="contact-social"
             >
               Github <MdArrowOutward />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/sahil-ahmed--expert-ui-ux-designer-21811523b/"
               target="_blank"
+              rel="noopener noreferrer"
               data-cursor="disable"
               className="contact-social"
             >
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="https://x.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Twitter <MdArrowOutward />
-            </a>
-            <a
               href="https://www.instagram.com"
               target="_blank"
+              rel="noopener noreferrer"
               data-cursor="disable"
               className="contact-social"
             >

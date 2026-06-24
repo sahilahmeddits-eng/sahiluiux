@@ -30,13 +30,13 @@ const ContactInfoCards = () => {
 
   return (
     <div className="info-cards-container" ref={cardsRef}>
-      <a href="tel:+1234567890" className="info-card">
+      <a href="tel:+917797982344" className="info-card">
         <div className="info-icon">
           <FiPhone size={28} />
         </div>
         <div className="info-content">
           <h3>Phone</h3>
-          <p>+1 234 567 890</p>
+          <p>7797982344</p>
         </div>
       </a>
 
@@ -51,7 +51,7 @@ const ContactInfoCards = () => {
       </a>
 
       <a
-        href="https://wa.me/1234567890"
+        href="https://wa.me/917797982344"
         target="_blank"
         rel="noopener noreferrer"
         className="info-card"
