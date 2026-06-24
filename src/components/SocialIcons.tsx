@@ -1,4 +1,5 @@
 import {
+  FaBehance,
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
@@ -70,6 +71,11 @@ const SocialIcons = () => {
             rel="noopener noreferrer"
           >
             <FaLinkedinIn />
+          </a>
+        </span>
+        <span>
+          <a href="https://www.behance.net/sahilahmed58" target="_blank" rel="noopener noreferrer">
+            <FaBehance />
           </a>
         </span>
         <span>

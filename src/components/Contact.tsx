@@ -52,6 +52,15 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
+              href="https://www.behance.net/sahilahmed58"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              Behance <MdArrowOutward />
+            </a>
+            <a
               href="https://www.instagram.com"
               target="_blank"
               rel="noopener noreferrer"
