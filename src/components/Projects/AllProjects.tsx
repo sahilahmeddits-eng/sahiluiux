@@ -1,30 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { allProjectsData } from "../../data/projects";
 
-const categories = ["All", "Website Project", "App Project", "ERP Project", "Graphic Design", "Freelance Project"];
-
-const allProjectsData = [
-  { id: 1, name: "E-Commerce Dashboard", cat: "Website Project", desc: "A full-featured admin panel for managing online stores.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=E-Commerce+Dashboard" },
-  { id: 2, name: "Portfolio Website", cat: "Website Project", desc: "Minimal personal portfolio for a UI/UX designer.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Portfolio+Website" },
-  { id: 3, name: "SaaS Landing Page", cat: "Website Project", desc: "High-converting landing page for a B2B SaaS product.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=SaaS+Landing+Page" },
-  { id: 4, name: "Restaurant Booking Site", cat: "Website Project", desc: "Modern website with table reservation functionality.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Restaurant+Booking+Site" },
-  { id: 5, name: "Corporate Website Redesign", cat: "Website Project", desc: "Full redesign of a corporate services website.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Corporate+Website" },
-  { id: 6, name: "Food Delivery App UI", cat: "App Project", desc: "Mobile app design for a food ordering platform.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Food+Delivery+App" },
-  { id: 7, name: "Fitness Tracker App", cat: "App Project", desc: "Health and workout tracking app for iOS and Android.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Fitness+Tracker+App" },
-  { id: 8, name: "Travel Booking App", cat: "App Project", desc: "End-to-end travel booking app with search and filters.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Travel+Booking+App" },
-  { id: 9, name: "Banking App Redesign", cat: "App Project", desc: "Modern redesign of a personal banking mobile app.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Banking+App" },
-  { id: 10, name: "ERP Inventory System", cat: "ERP Project", desc: "Full ERP module for warehouse inventory management.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=ERP+Inventory" },
-  { id: 11, name: "ERP HR Management", cat: "ERP Project", desc: "Human resources and payroll management ERP module.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=ERP+HR" },
-  { id: 12, name: "ERP Sales CRM", cat: "ERP Project", desc: "CRM and sales pipeline ERP system for small businesses.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=ERP+Sales" },
-  { id: 13, name: "Brand Identity", cat: "Graphic Design", desc: "Complete brand kit with logo, colors, typography, and business cards.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Brand+Identity" },
-  { id: 14, name: "Social Media Kit", cat: "Graphic Design", desc: "30-piece post and story template kit for Instagram.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Social+Media+Kit" },
-  { id: 15, name: "Product Packaging Design", cat: "Graphic Design", desc: "Label and box packaging design for a skincare brand.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Packaging+Design" },
-  { id: 16, name: "Event Poster Series", cat: "Graphic Design", desc: "Series of promotional posters for a music festival.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Event+Posters" },
-  { id: 17, name: "Blog Website", cat: "Freelance Project", desc: "WordPress blog with custom theme and SEO setup.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Blog+Website" },
-  { id: 18, name: "Digital Marketing Campaign", cat: "Freelance Project", desc: "6-month SEO and social media campaign for a client.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Marketing+Campaign" },
-  { id: 19, name: "Logo Design", cat: "Freelance Project", desc: "Logo and brand identity for a startup company.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Logo+Design" },
-  { id: 20, name: "Mobile App UI", cat: "Freelance Project", desc: "Full mobile UI/UX design for a logistics startup.", img: "https://via.placeholder.com/800x600/1e293b/ffffff?text=Mobile+App+UI" }
-];
+const categories = ["All", "Website Project", "App Project"];
 
 const CARDS_PER_PAGE = 6;
 
@@ -36,7 +14,7 @@ const AllProjects = () => {
   // Filter projects
   const filteredProjects = activeCategory === "All" 
     ? allProjectsData 
-    : allProjectsData.filter(p => p.cat === activeCategory);
+    : allProjectsData.filter(p => p.category === activeCategory);
 
   // Pagination logic
   const totalPages = Math.ceil(filteredProjects.length / CARDS_PER_PAGE);
@@ -91,10 +69,10 @@ const AllProjects = () => {
       {/* Part C: Cards Grid */}
       <div className="projects-grid" ref={gridRef}>
         {currentCards.map((project) => (
-          <div className="project-card" key={project.id} data-category={project.cat}>
+          <div className="project-card" key={project.id} data-category={project.category}>
             <div className="project-card-image-wrap">
-              <img src={project.img} alt={project.name} className="project-card-img" />
-              <span className="project-category-badge">{project.cat}</span>
+              <img src={project.image} alt={project.name} className="project-card-img" />
+              <span className="project-category-badge">{project.category}</span>
             </div>
             <div className="project-card-content">
               <h4>{project.name}</h4>

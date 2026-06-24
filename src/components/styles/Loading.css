@@ -197,6 +197,13 @@
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+}
+.loader-logo {
+  height: clamp(64px, 14vw, 110px);
+  width: auto;
+  display: block;
 }
 @keyframes blink {
   0% {

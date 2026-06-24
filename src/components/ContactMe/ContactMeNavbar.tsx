@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import HoverLinks from "../HoverLinks";
+import Logo from "../Logo";
 import "../styles/Navbar.css";
 
 const ContactMeNavbar = () => {
@@ -7,7 +8,7 @@ const ContactMeNavbar = () => {
     <>
       <div className="header" style={{ opacity: 1 }}>
         <Link to="/" className="navbar-title" data-cursor="disable">
-          Sahil
+          <Logo variant="dark-bg" className="navbar-logo" />
         </Link>
         <a
           href="mailto:sahilahmedv6@gmail.com"
