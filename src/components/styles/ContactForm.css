@@ -207,6 +207,10 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .contactform-section h2 {
+    font-size: 32px;
+  }
+
   .contactform-form {
     padding: 18px;
   }

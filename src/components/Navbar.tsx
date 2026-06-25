@@ -2,15 +2,21 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import Logo from "./Logo";
+import NavMenuButton from "./NavMenuButton";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { useMobileNav } from "../hooks/useMobileNav";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother;
 
 const Navbar = () => {
+  const { menuOpen, toggleMenu, closeMenu } = useMobileNav();
+
   useEffect(() => {
+    if (window.innerWidth <= 1024) return;
+
     try {
       smoother = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
@@ -56,7 +62,7 @@ const Navbar = () => {
   }, []);
   return (
     <>
-      <div className="header">
+      <div className={`header${menuOpen ? " nav-open" : ""}`}>
         <a href="/#" className="navbar-title" data-cursor="disable">
           <Logo variant="dark-bg" className="navbar-logo" />
         </a>
@@ -67,7 +73,8 @@ const Navbar = () => {
         >
           sahilahmedv6@gmail.com
         </a>
-        <ul>
+        <NavMenuButton isOpen={menuOpen} onToggle={toggleMenu} />
+        <ul onClick={closeMenu}>
           <li>
             <a data-href="#landingDiv" href="#landingDiv">
               <HoverLinks text="Home" active={true} />
@@ -110,6 +117,14 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      {menuOpen && (
+        <button
+          type="button"
+          className="nav-overlay"
+          onClick={closeMenu}
+          aria-label="Close navigation menu"
+        />
+      )}
 
       <div className="landing-circle1"></div>
       <div className="landing-circle2"></div>

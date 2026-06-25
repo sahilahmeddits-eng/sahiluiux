@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import HoverLinks from "../HoverLinks";
 import Logo from "../Logo";
+import NavMenuButton from "../NavMenuButton";
+import { useMobileNav } from "../../hooks/useMobileNav";
 import "../styles/Navbar.css";
 
 const ProjectsNavbar = () => {
+  const { menuOpen, toggleMenu, closeMenu } = useMobileNav();
+
   return (
     <>
-      <div className="header" style={{ opacity: 1 }}>
+      <div className={`header${menuOpen ? " nav-open" : ""}`} style={{ opacity: 1 }}>
         <Link to="/" className="navbar-title" data-cursor="disable">
           <Logo variant="dark-bg" className="navbar-logo" />
         </Link>
@@ -17,7 +21,8 @@ const ProjectsNavbar = () => {
         >
           sahilahmedv6@gmail.com
         </a>
-        <ul>
+        <NavMenuButton isOpen={menuOpen} onToggle={toggleMenu} />
+        <ul onClick={closeMenu}>
           <li>
             <Link to="/">
               <HoverLinks text="Home" />
@@ -60,6 +65,14 @@ const ProjectsNavbar = () => {
           </li>
         </ul>
       </div>
+      {menuOpen && (
+        <button
+          type="button"
+          className="nav-overlay"
+          onClick={closeMenu}
+          aria-label="Close navigation menu"
+        />
+      )}
     </>
   );
 };

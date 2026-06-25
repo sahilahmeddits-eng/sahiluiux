@@ -229,13 +229,76 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .service-hero {
+    min-height: 60vh;
+    padding-top: 80px;
+  }
+
   .service-hero h1 {
     font-size: 48px;
   }
+
+  .service-hero p {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .service-personal {
+    margin: 60px auto;
+  }
+
+  .service-section-header {
+    margin-bottom: 40px;
+  }
+
+  .service-section-header h2 {
+    font-size: 36px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 28px;
+  }
+
   .service-freelance {
+    margin: 80px auto;
     padding: 40px 20px;
   }
+
   .service-freelance h2 {
     font-size: 36px;
+  }
+
+  .service-freelance p {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .service-hero h1 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .service-section-header h2 {
+    font-size: 28px;
+  }
+
+  .service-freelance h2 {
+    font-size: 28px;
+  }
+
+  .service-freelance-tags {
+    gap: 10px;
+  }
+
+  .service-tag {
+    padding: 10px 16px;
+    font-size: 13px;
   }
 }

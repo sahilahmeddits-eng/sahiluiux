@@ -9,6 +9,8 @@ gsap.registerPlugin(useGSAP);
 
 const Work = () => {
   useGSAP(() => {
+  if (window.innerWidth <= 900) return;
+
   let translateX: number = 0;
 
   function setTranslateX() {
